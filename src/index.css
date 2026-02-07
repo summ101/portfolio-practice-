@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brutalist Portfolio Design System - Deep charcoal, off-white, muted red accent */
+
+@layer base {
+  :root {
+    /* Deep charcoal / near-black as primary background */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 96%;
+
+    /* Off-white / light grey for cards and secondary areas */
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Muted red accent */
+    --primary: 8 65% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Off-white secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+
+    /* Muted greys */
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 8 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 8 65% 50%;
+
+    --radius: 0rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 8 65% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 8 65% 50%;
+
+    /* Chart colors */
+    --chart-1: 8 65% 50%;
+    --chart-2: 0 0% 40%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 80%;
+    --chart-5: 0 0% 96%;
+
+    --sidebar: 0 0% 8%;
+
+    /* Typography */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+    /* Shadows - minimal for brutalist aesthetic */
+    --shadow-2xs: none;
+    --shadow-xs: none;
+    --shadow-sm: none;
+    --shadow: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+    --shadow-2xl: none;
+
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  /* Same for dark mode - this is a dark-first design */
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 8 65% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 8 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 8 65% 50%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 8 65% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 8 65% 50%;
+
+    --chart-1: 8 65% 50%;
+    --chart-2: 0 0% 40%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 80%;
+    --chart-5: 0 0% 96%;
+
+    --sidebar: 0 0% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Large display typography */
+  .display-xl {
+    @apply text-[8rem] md:text-[12rem] lg:text-[16rem] font-bold leading-[0.85] tracking-[-0.04em];
+    font-family: var(--font-display);
+  }
+
+  .display-lg {
+    @apply text-[4rem] md:text-[6rem] lg:text-[8rem] font-bold leading-[0.9] tracking-[-0.03em];
+    font-family: var(--font-display);
+  }
+
+  .display-md {
+    @apply text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold leading-[1.1] tracking-[-0.02em];
+    font-family: var(--font-display);
+  }
+
+  /* Section number styling */
+  .section-number {
+    @apply text-[6rem] md:text-[10rem] lg:text-[14rem] font-light leading-none tracking-[-0.05em] opacity-30;
+    font-family: var(--font-display);
+    -webkit-text-stroke: 1px hsl(var(--foreground) / 0.3);
+    color: transparent;
+  }
+}
+
+@layer components {
+  /* Service list item */
+  .service-item {
+    @apply flex items-center justify-between py-4 border-t border-border/30 transition-colors duration-300;
+  }
+
+  .service-item:hover {
+    @apply bg-muted/10;
+  }
+
+  /* Fade in on scroll animation */
+  .fade-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-up.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  /* Text accent highlight */
+  .text-accent-highlight {
+    @apply text-primary;
+  }
+
+  /* Grid layout utilities */
+  .grid-editorial {
+    @apply grid grid-cols-1 lg:grid-cols-12 gap-8;
+  }
+
+  /* Custom cursor styles */
+  .cursor-none * {
+    cursor: none !important;
+  }
+}

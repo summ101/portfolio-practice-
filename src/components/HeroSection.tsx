@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import heroPortrait from "@/assets/portrait-hero.jpg";
 
 interface Annotation {
   id: string;
@@ -102,11 +101,11 @@ const HeroSection = () => {
             transform: `scale(${scale}) translateY(${parallaxY}px)`,
             filter: `blur(${blur}px)`,
           }}
-        >
-          <img
-            src={heroPortrait}
-            alt="Hero background"
-            className="w-full h-full object-cover object-center"
+         >
+         <img
+          src="/hero.png"
+          alt="Hero background"
+          className="w-full h-full object-cover object-center"
           />
         </div>
 
